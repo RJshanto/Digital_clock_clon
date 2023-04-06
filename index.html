@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dcstyle.css">
+    <title>Digital Clock</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <h2 id="head-text">Digital clock </h2>
+    <div class="display">
+        <div id="time"></div>
+    </div>
+    <span></span>
+    <span></span>
+</div>
+
+
+
+     <script>
+
+          // i used here setinterval function becuase of i want to update time every second ....
+
+        setInterval(() => {
+            let date = new Date();
+            let hours = date.getHours();
+            let minute = date.getMinutes();
+            let second = date.getSeconds();
+            let day_night ="AM";
+
+        
+            if(hours>12){
+                day_night="PM";
+                hours =hours-12;    // format hours in 12 ...and declear day= PM 
+            }
+            if(hours<10){
+                hours ="0"+hours;    // add 0 when hours is less than 10..
+            }
+            if(minute<10){
+                minute= "0"+minute;  // add 0 when minutes is less than 10..
+            }
+            if(second<10){
+                second= "0"+second;  // add 0 when second is less than 10..
+            }
+      
+        document.getElementById("time").innerHTML=hours + ":" + minute + ":" + second +" "+day_night;
+
+        }, 1000);
+
+
+
+        // hope you will be happy to see my code ....covered by ( Rifat Jahan) 
+
+
+    </script> 
+</body>
+</html>
